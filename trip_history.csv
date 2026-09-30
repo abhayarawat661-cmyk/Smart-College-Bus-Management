@@ -1,0 +1,2 @@
+date,route,time,predicted_students,required_buses,assigned_buses,status
+2026-09-30 20:29,R3,4:00 PM,87,2,"BUS-01, BUS-02",Running

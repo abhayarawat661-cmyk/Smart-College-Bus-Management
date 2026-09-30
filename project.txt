@@ -1,0 +1,12 @@
+bus/
+│
+├── college_bus_demand_dataset.csv
+├── college_bus_master.csv
+├── trip_history.csv
+│
+├── analysis.py
+├── ml_model.py
+├── bus_scheduler.py
+├── bus_return.py
+├── smart_bus_system.py
+└── trip_history.py
