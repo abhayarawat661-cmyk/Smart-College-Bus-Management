@@ -1,54 +1,60 @@
-# Smart College Bus Management System
+# 🚌 Smart College Bus Management System
 
-##  Project Overview
-A web-based college bus management system that calculates bus requirements based on student demand and manages bus availability, assignment, and return.
+A web-based **Smart College Bus Management System** designed to analyze student bus demand, calculate required buses, manage bus availability, and visualize route-wise demand.
 
-##  Key Features
-- Student demand input
-- Automatic bus requirement calculation
-- Route-wise analysis
-- Bus fleet management
-- Available/running bus tracking
-- Bus assignment
-- Bus return and reuse
-- Interactive dashboard
-- Machine Learning demand prediction
-- SQLite database
+## 📌 Project Overview
 
-## Technologies Used
-- Python
-- Flask
-- SQLite
-- Pandas
-- NumPy
-- Scikit-learn
-- HTML/CSS
-- JavaScript
-- Chart.js
+This project provides a centralized dashboard for managing college bus demand and fleet information.
 
-##  System Workflow
+The system allows users to enter student demand for different routes and departure times. It automatically calculates the number of buses required based on the available bus capacity.
 
-Student Demand
-       ↓
+It also includes bus fleet management features such as available/running bus tracking, bus assignment, bus return, and bus reuse.
+
+## 🚀 Key Features
+
+- 🧑‍🎓 Student demand input
+- 🚌 Automatic bus requirement calculation
+- 🗺️ Route-wise demand analysis
+- 🚍 Bus fleet management
+- 🟢 Available bus tracking
+- 🔴 Running bus tracking
+- 📋 Bus assignment
+- 🔄 Bus return and reuse
+- 📊 Interactive dashboard
+- 📈 Student demand visualization
+- 📉 Required buses visualization
+- 🤖 Machine Learning-based demand prediction
+- 🗄️ SQLite database integration
+- 📑 Trip history management
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Python | Backend & data processing |
+| Flask | Web application framework |
+| SQLite | Database |
+| Pandas | Data analysis |
+| NumPy | Numerical operations |
+| Scikit-learn | Machine Learning |
+| HTML | Web structure |
+| CSS | User interface |
+| JavaScript | Frontend functionality |
+| Chart.js | Data visualization |
+
+## 🔄 System Workflow
+
+```text
+Student Demand Input
+        ↓
 Required Bus Calculation
-       ↓
+        ↓
 Available Bus Check
-       ↓
+        ↓
 Bus Assignment
-       ↓
+        ↓
 Bus Running
-       ↓
+        ↓
 Bus Return
-       ↓
+        ↓
 Bus Available Again
-
-##  How to Run
-
-1. Clone the repository
-2. Install dependencies
-3. Run the Flask application
-4. Open the application in your browser
-
-```bash
-python -m pip install -r requirements.txt
-python app.py
