@@ -1154,7 +1154,240 @@
         class="card"
         style="margin-top:30px;"
     >
+<!-- =========================================================
+     BUS FLEET MANAGEMENT
+========================================================= -->
 
+<div class="section-card">
+
+    <div class="section-title">
+        🚌 Bus Fleet Management
+    </div>
+
+    <!-- BUS STATUS CARDS -->
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <div class="stat-title">🟢 Available Buses</div>
+            <div class="stat-number">
+                {{ available_buses }}
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-title">🔴 Running Buses</div>
+            <div class="stat-number">
+                {{ running_buses }}
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- RETURN ALL BUTTON -->
+
+    {% if running_buses > 0 %}
+
+    <form action="/return_all" method="POST" style="margin-bottom: 25px;">
+
+        <button
+            type="submit"
+            class="calculate-btn"
+            style="background: #198754;"
+            onclick="return confirm('Return all running buses?');">
+
+            🔄 Return All Running Buses
+
+        </button>
+
+    </form>
+
+    {% endif %}
+
+
+    <!-- BUS TABLE -->
+
+    <div style="overflow-x:auto;">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Bus ID</th>
+
+                    <th>Capacity</th>
+
+                    <th>Status</th>
+
+                    <th>Current Route</th>
+
+                    <th>Departure</th>
+
+                    <th>Students</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for bus in bus_status %}
+
+                <tr>
+
+                    <!-- BUS ID -->
+
+                    <td>
+                        <strong>{{ bus[0] }}</strong>
+                    </td>
+
+
+                    <!-- CAPACITY -->
+
+                    <td>
+                        {{ bus[1] }}
+                    </td>
+
+
+                    <!-- STATUS -->
+
+                    <td>
+
+                        {% if bus[2] == "Available" %}
+
+                            <span style="
+                                background:#d1e7dd;
+                                color:#0f5132;
+                                padding:6px 12px;
+                                border-radius:20px;
+                                font-weight:bold;
+                            ">
+                                🟢 Available
+                            </span>
+
+                        {% else %}
+
+                            <span style="
+                                background:#f8d7da;
+                                color:#842029;
+                                padding:6px 12px;
+                                border-radius:20px;
+                                font-weight:bold;
+                            ">
+                                🔴 Running
+                            </span>
+
+                        {% endif %}
+
+                    </td>
+
+
+                    <!-- ROUTE -->
+
+                    <td>
+
+                        {% if bus[3] %}
+
+                            Route {{ bus[3] }}
+
+                        {% else %}
+
+                            —
+
+                        {% endif %}
+
+                    </td>
+
+
+                    <!-- TIME -->
+
+                    <td>
+
+                        {% if bus[4] %}
+
+                            {{ bus[4] }}
+
+                        {% else %}
+
+                            —
+
+                        {% endif %}
+
+                    </td>
+
+
+                    <!-- STUDENTS -->
+
+                    <td>
+
+                        {% if bus[5] %}
+
+                            {{ bus[5] }}
+
+                        {% else %}
+
+                            —
+
+                        {% endif %}
+
+                    </td>
+
+
+                    <!-- ACTION -->
+
+                    <td>
+
+                        {% if bus[2] == "Running" %}
+
+                            <form
+                                action="/return_bus/{{ bus[0] }}"
+                                method="POST">
+
+                                <button
+                                    type="submit"
+                                    style="
+                                        background:#198754;
+                                        color:white;
+                                        border:none;
+                                        padding:8px 14px;
+                                        border-radius:6px;
+                                        cursor:pointer;
+                                        font-weight:bold;
+                                    "
+                                    onclick="return confirm('Return {{ bus[0] }}?');">
+
+                                    🔄 Return Bus
+
+                                </button>
+
+                            </form>
+
+                        {% else %}
+
+                            <span style="color:#198754;font-weight:bold;">
+                                Ready
+                            </span>
+
+                        {% endif %}
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
         <h2 class="section-title">
             📋 Recent Demand Records
         </h2>
