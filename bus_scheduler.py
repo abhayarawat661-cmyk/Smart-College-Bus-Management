@@ -24,7 +24,7 @@ def allocate_buses(route, time, students):
     print("Buses Required:", required_buses)
 
     if len(available_buses) < required_buses:
-        print("❌ Not enough buses available!")
+        print(" Not enough buses available!")
         print("Available Buses:", len(available_buses))
         return
 
@@ -34,7 +34,7 @@ def allocate_buses(route, time, students):
     print("\nAssigned Buses:")
 
     for bus_id in selected_buses["bus_id"]:
-        print("🚍", bus_id)
+        print("", bus_id)
 
         # Bus ko running mark karo
         buses.loc[buses["bus_id"] == bus_id, "status"] = "Running"
@@ -42,7 +42,7 @@ def allocate_buses(route, time, students):
     # Updated bus data save karo
     buses.to_csv("college_bus_master.csv", index=False)
 
-    print("\n✅ Buses successfully allocated!")
+    print("\n Buses successfully allocated!")
 
 
 # Example trip
