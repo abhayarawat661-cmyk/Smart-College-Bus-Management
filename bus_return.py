@@ -6,7 +6,7 @@ buses = pd.read_csv("college_bus_master.csv")
 def return_bus(bus_id):
 
     if bus_id not in buses["bus_id"].values:
-        print("❌ Bus not found!")
+        print(" Bus not found!")
         return
 
     current_status = buses.loc[
@@ -21,11 +21,11 @@ def return_bus(bus_id):
 
         buses.to_csv("college_bus_master.csv", index=False)
 
-        print("✅", bus_id, "has returned.")
+        print("", bus_id, "has returned.")
         print("Status: Available")
 
     else:
-        print("ℹ️", bus_id, "is already available.")
+        print("", bus_id, "is already available.")
 
 
 # Example
