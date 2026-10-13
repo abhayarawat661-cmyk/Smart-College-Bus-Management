@@ -40,7 +40,7 @@ def add_trip(route, time, students, buses):
 
     df.to_csv(FILE, index=False)
 
-    print("✅ Trip saved successfully!")
+    print("Trip saved successfully!")
 
 
 # Example
